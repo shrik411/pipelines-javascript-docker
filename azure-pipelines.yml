@@ -10,7 +10,7 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
-  dockerHub: test
+  dockerHub: DockerHub
 
 steps:
 - task: Docker@2
