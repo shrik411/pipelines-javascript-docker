@@ -11,15 +11,18 @@ pool:
 variables:
   imageName: 'pipelines-javascript-docker'
   dockerHub: DockerHub
+  tag: 38
 
 steps:
 - task: Docker@2
   displayName: 'Build Docker image'
   inputs:
-   repository: $(imageName)
-   command: build
-   Dockerfile: app/Dockerfile
-   
+    repository: $(imageName)
+    command: build
+    Dockerfile: app/Dockerfile
+    tags: |
+      $(tag)
+
 - task: Docker@2
   displayName: 'Push Image'
   inputs:
@@ -27,4 +30,4 @@ steps:
     repository: $(imageName)
     command: push
     tags: |
-      latest
+      $(tag)
