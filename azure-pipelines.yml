@@ -33,7 +33,7 @@ steps:
   inputs:
     containerRegistry: |
       DockerHub
-    repository: 'products-store-mvc'
+    repository: $(imageName)
     command: push
     tags: |
       $(tag)
