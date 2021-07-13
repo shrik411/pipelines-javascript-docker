@@ -4,7 +4,7 @@ stages:
   variables:
     vmImageName: ubuntu-latest
     imageName: 'products-store-mvc'
-    dockerRegistryServiceConnection: DockerHub
+    dockerRegistryServiceConnection: 'DockerHub'
     dockerfile: app/Dockerfile
     imageRepository: 'products-store-mvc'
     tag: 38
