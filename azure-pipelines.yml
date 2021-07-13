@@ -39,3 +39,5 @@ steps:
     containerRegistry: 'DockerHub'
     repository: 'codewithme/products-store-mvc'
     command: 'push'
+    tags: |
+      $(tag)
