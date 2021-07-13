@@ -10,7 +10,7 @@ pool:
 
 variables:
   containerRegistryServiceConnection: DockerHub
-  imageName: 'products-store-mvc'
+  imageName: 'codewithme/products-store-mvc'
   dockerHub: 'docker.io/codewithme/'
   tag: 38
 
