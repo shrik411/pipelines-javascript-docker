@@ -23,3 +23,13 @@ steps:
     tags: |
       $(tag)
 
+- task: Docker@2
+  displayName: 'Push Image'
+  inputs:
+    containerRegistry: |
+      DockerHub
+    repository: $(imageName)
+    command: push
+    container: 'codewithme/products-store-mvc'
+    tags: |
+      $(tag)
