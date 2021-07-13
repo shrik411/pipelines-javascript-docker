@@ -19,7 +19,7 @@ stages:
       inputs:
         command: buildAndPush
         repository: 'codewithme/products-store-mvc'
-        dockerfile: $(dockerfilePath)
+        dockerfile: 'app/Dockerfile'
         containerRegistry: DockerHub
         tags: |
           $(tag)
