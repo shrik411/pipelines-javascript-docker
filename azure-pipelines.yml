@@ -52,6 +52,6 @@ steps:
   displayName: Push image
   inputs:
     containerRegistry: $(containerRegistryServiceConnection)
-    repository: $(imageName)
+    repository: 'codewithme/products-store-mvc'
     command: push
     tags: $(tag)
