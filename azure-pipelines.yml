@@ -52,6 +52,6 @@ steps:
   displayName: Push image
   inputs:
     containerRegistry: $(containerRegistryServiceConnection)
-    repository: 'products-store-mvc'
+    repository: $(imageName)
     command: push
     tags: $(tag)
