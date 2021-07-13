@@ -3,10 +3,6 @@ stages:
   displayName: Build and push stage
   variables:
     vmImageName: ubuntu-latest
-    imageName: 'products-store-mvc'
-    dockerRegistryServiceConnection: DockerHub
-    dockerfile: app/Dockerfile
-    imageRepository: 'products-store-mvc'
     tag: 38
   jobs:  
   - job: Build
