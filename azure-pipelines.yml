@@ -9,15 +9,21 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+  containerRegistryServiceConnection: DockerHub
   imageName: 'products-store-mvc'
   dockerHub: 'docker.io/codewithme/'
   tag: 38
 
 steps:
 - task: Docker@2
+  inputs:
+    command: login
+    containerRegistry: $(containerRegistryServiceConnection)
+- task: Docker@2
   displayName: 'Build Docker image'
   inputs:
     repository: $(imageName)
+    containerRegistry: $(containerRegistryServiceConnection)
     command: build
     Dockerfile: app/Dockerfile
     tags: |
@@ -45,7 +51,7 @@ steps:
 - task: Docker@2
   displayName: Push image
   inputs:
-    containerRegistry: DockerHub
+    containerRegistry: $(containerRegistryServiceConnection)
     repository: 'products-store-mvc'
     command: push
     tags: $(tag)
